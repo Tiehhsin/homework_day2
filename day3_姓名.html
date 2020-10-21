@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    name: <input type="text" v-model="fullName"><br>
+    first name: {{firstName}}
+    last name: {{lastName}}
+    <hr>
+
+    last name: <input type="text" v-model="lName">
+    first name: <input type="text" v-model="fName"><br>
+    name: {{getName}}
+
+
+</div>
+
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            fullName:'',
+            lastName:'',
+            firstName:'',
+            lName:'',
+            fName:'',
+
+        },
+        methods: {
+
+        },
+        computed:{
+            getName(){
+                return this.lName + this.fName;
+            }
+        },
+        watch:{
+            fullName(){
+                let fname = this.fullName.split(" ");
+                this.firstName = fname[1];
+                this.lastName = fname[0];
+
+            }
+
+        }
+    })
+</script>
+
+</body>
+</html>

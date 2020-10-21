@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+
+<div id="app">
+    输入父组件中的值： <input type="text" v-model="data1"><br>
+    输出父组件中要传给子组件的值： {{data1}}
+    <com :test="data1"></com>
+</div>
+<script>
+    let com = {
+        template: `
+            <div>这是子组件接收到的值:{{test}}</div>
+
+        `,
+        props: ["test"],
+    }
+
+    new Vue({
+        el: "#app",
+        data: {
+            data1:'',
+        },
+        components: {
+            "com": com,
+        }
+    })
+</script>
+</body>
+</html>

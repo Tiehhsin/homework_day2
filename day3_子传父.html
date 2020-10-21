@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+
+<div id="app">
+    父组件中的值： {{data1}}<br>
+    <com @changewd="fuChange"></com>
+</div>
+
+<script>
+    let com = {
+        template: `
+          <div>这是子组件，点击按钮将子组件中的值传入父组件
+          <button @click="change">click me</button>
+          </div>
+
+        `,
+        methods: {
+            change() {
+                this.$emit('changewd', '三国演义')
+            }
+        },
+    }
+
+    new Vue({
+        el: "#app",
+        data: {
+            data1: '红楼梦',
+            book: '',
+        },
+        methods: {
+            fuChange(data1) {
+                console.log(data1);
+                this.data1 = data1;
+            },
+        },
+        components: {
+            "com": com,
+        }
+    })
+</script>
+</body>
+</html>

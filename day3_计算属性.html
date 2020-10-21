@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <p @click="minus">{{number}}</p>
+    <p>十位是： {{parseInt(number / 10)}}</p>
+    <p>个位是： {{number % 10}}</p>
+    <hr>
+
+    <input type="number" v-model="digit1">+
+    <input type="number" v-model="digit2">=
+    {{add}}
+    <hr>
+
+
+</div>
+
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            number: 86,
+            digit1: '',
+            digit2: '',
+        },
+        methods: {
+            minus(){
+                this.number--;
+            }
+        },
+        computed:{
+            add(){
+                return this.digit1 + +this.digit2
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

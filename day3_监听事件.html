@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <p @click="minus">{{number}}</p>
+    <p>十位：{{digit1}}</p>
+    <p>个位：{{digit2}}</p>
+
+</div>
+
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            number: 86,
+            digit1: '',
+            digit2: '',
+        },
+        methods: {
+            minus() {
+                this.number--;
+            }
+        },
+        watch: {
+            number() {
+                this.digit1 = parseInt(this.number / 10);
+                this.digit2 = this.number % 10;
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .pink {
+            color: hotpink;
+        }
+
+        .purple {
+            color: mediumpurple;
+        }
+    </style>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <com css="pink"></com>
+    <br>
+    <com css="purple"></com>
+</div>
+<script>
+    let com = {
+        template: `
+            <div :class="css">这是子组件，使用了props属性</div>
+        `,
+        props: ["css"],
+    }
+
+    new Vue({
+        el: "#app",
+        data: {},
+        components: {
+            "com": com,
+        }
+    })
+</script>
+</body>
+</html>

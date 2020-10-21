@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+
+    origin:<p id="p">{{number}}</p> <br>
+    updated:<p id="update" @click="change">{{number}}</p>
+
+
+</div>
+
+
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+          number:96,
+        },
+        methods: {
+            change() {
+                this.number++;
+            },
+        },
+
+        beforeCreate(){
+
+            console.log('before create the number is: ' + this.number);
+        },
+
+        created(){
+            console.log('after created the number is: ' + this.number);
+        },
+
+        beforeMount(){
+            console.log('before mount:' + document.getElementById('p').innerText);
+        },
+
+        mounted(){
+            console.log('after mounted: '+ document.getElementById('p').innerText);
+        },
+
+        beforeUpdate(){
+            console.log('beforeUpdate: '+ document.getElementById('update').innerText);
+        },
+
+        updated(){
+            console.log('after update: '+ document.getElementById('update').innerText);
+        },
+
+        beforeDestroy() {
+
+        },
+
+        destroyed() {
+        },
+
+
+    })
+</script>
+
+</body>
+</html>
