@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+
+    <p>this is the index data</p>
+    <hr>
+
+
+    <router-view></router-view>
+
+</div>
+
+<script src="js/vue.min.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+<script>
+
+    let firstcom = {
+        template: `
+            <div>this is the first component
+            <button @click="showdetails">click to show details</button>
+            </div>
+        `,
+        methods:{
+            showdetails(){
+                this.$router.push({path:'/second/hehe'});
+            }
+        }
+    }
+
+    let secondcom = {
+        template: `
+            <div>this is the second component
+            <br>
+            传递过来的url中的参数: {{$route.params.details}}
+            </div>
+        `
+    }
+
+
+
+    let myRouter = new VueRouter({
+        routes: [
+            {path: "/first", component: firstcom},
+            {path: "/second/:details", component: secondcom},
+            // {path: "/link1", component: link1},
+            // {path: "/link2", component: link2},
+            {path: "/", component: firstcom},
+        ]
+    })
+
+    new Vue({
+        el: "#app",
+        data: {},
+        // 注入定义好的vue路由
+        // 通过router配置参数注入,从而整个vue实例都拥有路由功能
+        router: myRouter
+    })
+</script>
+
+</body>
+</html>

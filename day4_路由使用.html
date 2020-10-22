@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+
+    <p>this is the index data</p>
+    <hr>
+
+    <router-link to="/first">show the first component</router-link>
+    <br>
+    <router-link to="/second">show the second component</router-link>
+    <br>
+    <router-link to="/link1">show the link1</router-link>
+    <br>
+    <router-link to="/link2">show the link2</router-link>
+
+    <router-view></router-view>
+
+</div>
+
+<script src="js/vue.min.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+<script>
+
+    let firstcom = {
+        template: `
+            <div>this is the first component</div>
+        `
+    }
+
+    let secondcom = {
+        template: `
+            <div>this is the second component</div>
+        `
+    }
+
+    let link1 = {
+        template: `
+            <div>this is the link1</div>
+        `
+    }
+
+    let link2 = {
+        template: `
+          <div>this is the link2
+          <table border="1">
+            <tr>
+              <td>id</td>
+              <td>name</td>
+              <td>gender</td>
+            </tr>
+            <tr v-for="user in users">
+              <td>{{user.id}}</td>
+              <td>{{user.name}}</td>
+              <td>{{ user.gender }}</td>
+            </tr>
+
+          </table>
+          </div>
+        `,
+        data() {
+            return {
+                users: [
+                    {"id": 1, name: 'Andy', gender: 'male'},
+                    {"id": 2, name: 'Juan', gender: 'male'},
+                    {"id": 3, name: 'Taylor', gender: 'male'},
+                ]
+            }
+        }
+    }
+
+    let myRouter = new VueRouter({
+        routes: [
+            {path: "/first", component: firstcom},
+            {path: "/second", component: secondcom},
+            {path: "/link1", component: link1},
+            {path: "/link2", component: link2},
+            {path: "/", component: firstcom},
+        ]
+    })
+
+    new Vue({
+        el: "#app",
+        data: {},
+        // 注入定义好的vue路由
+        // 通过router配置参数注入,从而整个vue实例都拥有路由功能
+        router: myRouter
+    })
+</script>
+
+</body>
+</html>

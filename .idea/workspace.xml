@@ -21,7 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e82e08d0-3a48-40e4-b9ec-21a6c13c8160" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/excercise.html" beforeDir="false" afterPath="$PROJECT_DIR$/day2_excercise.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +46,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/百知上课/day4" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="terminal" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -67,7 +66,8 @@
       <updated>1603191785530</updated>
       <workItem from="1603191788204" duration="6267000" />
       <workItem from="1603269600661" duration="671000" />
-      <workItem from="1603281277092" duration="7867000" />
+      <workItem from="1603281277092" duration="7982000" />
+      <workItem from="1603366786620" duration="1881000" />
     </task>
     <servers />
   </component>
@@ -84,19 +84,20 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1603283414925">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1603366854735">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1603283414925" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1603366854735" />
     <state x="186" y="10" key="SettingsEditor" timestamp="1603198231310">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="186" y="10" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1603198231310" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1603283181675">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1603369078007">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1603283181675" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1603369078007" />
   </component>
 </project>
